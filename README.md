@@ -1,2 +1,2 @@
 # PINN
-Physics-Informed Neural Networks:  Theory and Applications
+Physics-Informed Neural Networks
