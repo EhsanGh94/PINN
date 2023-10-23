@@ -183,6 +183,19 @@ Q.sum().backward() ## # Q.backward() !error
 # sum applies and .grad holds the sum of derivatives with different values
 '''
 
+# Basic Autograd Example:
+x = torch.tensor(1., requires_grad=True)
+w = torch.tensor(2., requires_grad=True)
+b = torch.tensor(3., requires_grad=True)
+y = w * x + b    # y = 2 * x + 3
+
+# Compute gradients:
+y.backward()
+
+print('dy/dx:', x.grad)    # x.grad = 2 
+print('dy/dw:', w.grad)    # w.grad = 1 
+print('dy/db:', b.grad)    # b.grad = 1 
+
 # linear Regression:
 from torch.nn import Linear
 
