@@ -156,3 +156,39 @@ plt.title('Adam')
 plt.xlabel('x1')
 plt.ylabel('x2')
 plt.show() 
+
+
+## Adam (v2)
+def stochastic_update_Adam(w, grad_w, mt, vt,lrate, iteration):
+    beta1 = 0.9;
+    beta2 = 0.999;
+    epsilon = 1e-8;
+
+    mt = mt*beta1 + (1.0-beta1)*grad_w;
+    vt = vt*beta2 + (1.0-beta2)*grad_w**2;
+
+    mt_hat = mt/(1.0-beta1**iteration);
+    vt_hat = vt/(1.0-beta2**iteration);
+
+    scal = 1.0/(np.sqrt(vt_hat) + epsilon);
+
+    w = w - lrate*mt_hat*scal;
+    
+    return w, mt, vt
+
+'''
+        for l in range(0,num_layers-1):
+            mt_weights[l], mt_biases[l] = [np.zeros(self.weights[l].shape),
+                                          np.zeros(self.biases[l].shape)]
+            vt_weights[l], vt_biases[l] = [np.zeros(self.weights[l].shape),
+                                           np.zeros(self.biases[l].shape)]
+
+            for l in range(0,num_layers-1):
+                [self.weights[l],
+                 mt_weights[l],
+                 vt_weights[l]] = stochastic_update_Adam(self.weights[l],
+                                                         loss_weights[l],
+                                                         mt_weights[l],
+                                                         vt_weights[l],
+                                                         learning_rate, it)
+'''
