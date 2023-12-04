@@ -1,7 +1,7 @@
 print("Hello", "World!")
 
-i = 4                                        # Integer
-f = 3.14                                     # Float
+i = 4                                        # Integer #i = 0
+f = 3.14                                     # Float  #f = 0.0 #f = -1.3 * 10 ** (-6) or f = -1.3e-6
 s1 = 'string variable with single qoutes'    # String
 s2 = "string variable with double qoutes"    # String
 b = True                                     # Boolean
@@ -16,7 +16,7 @@ list1 = ["abc", 22, True, 50, "Ehsan"]
 print('The number of items in the list is', len(list1))
 t = (1,2,3,4)                      # Tuple
 #t = tuple((1,2,3,4))
-s = {1,2,3,4}                      # Set
+s = {1,2,3,4}                      # Set   #it will automatically remove duplicate values from the set.
 #s = set((1,2,3,4))
 d = {'Ali': 24, 'Mohammad': 29}    # Dictionary
 #d = dict('Ali'=24, 'Mohammad'=29)
@@ -54,6 +54,13 @@ while i < 6:
         break
     i += 1
 
+s = 0
+i = 1
+while i <= 3:
+    s = s + i**2
+    i += 1    #i = i + 1
+print(f'Sum = {s}')
+
 fruits = ["apple", "banana", "cherry"]
 for x in fruits:
     if x == "banana":
@@ -64,6 +71,9 @@ for x in range(2, 30, 3):
 
 def my_function(x):
     return 5 * x
+print(my_function(3))
+
+my_function = lambda x: 3 * x 
 print(my_function(3))
 
 ##############################################################################################################################
