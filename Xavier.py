@@ -6,7 +6,7 @@ def xavier_init(size):
     xavier_stddev = np.sqrt(2/(in_dim + out_dim))
     return np.random.normal(size = [in_dim, out_dim], scale=xavier_stddev)
 
-def initialize_NN(layers):
+def initialize_NN(layers):  # layers = [2]+4*[50]+[6]
     weights = []
     biases = []
     num_layers = len(layers)
